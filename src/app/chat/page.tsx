@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>LangChain Bot</h1>
+      <h1>Fai una domanda riguardo ai "Servizi accessori al Conto Credem Facile"</h1>
       <input
         type="text"
         value={question}
