@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center px-4">
       <h1 className="text-2xl font-semibold text-gray-800 mb-6 max-w-xl">
-        Fai una domanda riguardo ai "Servizi accessori al Conto Credem Facile"</h1>
+        Fai una domanda riguardo ai Servizi accessori al Conto Credem Facile</h1>
         <div className="flex items-center gap-4 mb-4 w-full max-w-lg">
         <input
           type="text"
