@@ -5,13 +5,11 @@ import { WebPDFLoader } from "@langchain/community/document_loaders/web/pdf";
 
 export async function processStaticPDF() {
 
-  let baseUrl = process.env.VERCEL_URL || "http://localhost:3000";
-  baseUrl = baseUrl.startsWith("http") ? baseUrl : `https://${baseUrl}`;
-  
-  const pdfUrl = `${baseUrl}/ugly_bank_file.pdf`;
-  
-  console.log(pdfUrl)
 
+  const pdfUrl = process.env.TEST_PDF_URL || "https://www.credem.it/content/dam/credem/documenti/Trasparenza/-conti-correnti---fascicoli-dei-servizi-accessori-al-conto/00001_010_FA_P_C_CFA21_P10831.pdf"
+
+  console.log(pdfUrl)
+  
   const response = await fetch(pdfUrl);
 
   const pdfArrayBuffer = await response.arrayBuffer();
