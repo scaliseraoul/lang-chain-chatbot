@@ -1,5 +1,7 @@
 # LangChain PDF Chat App
 
+Live demo: https://lang-chain-chatbot.vercel.app/chat
+
 This application demonstrates the use of [LangChain](https://github.com/hwchase17/langchain) with persistent chat functionality and Retrieval-Augmented Generation (RAG) based on content from a local PDF file. The app loads the PDF, processes it with LangChain to enable question-answering, and provides a persistent chat experience for users. 
 
 PDF downloaded from https://www.credem.it/content/dam/credem/documenti/Trasparenza/-conti-correnti---fascicoli-dei-servizi-accessori-al-conto/00001_010_FA_P_C_CFA21_P10831.pdf
@@ -13,5 +15,5 @@ PDF downloaded from https://www.credem.it/content/dam/credem/documenti/Trasparen
 ## TODO
 
 - **Optimize Chain Creation**: Move the chain creation logic to a separate module, allowing initialization once and avoiding re-creation with every message.
-- **Fix PDF URL for Vercel Deployment**: Update the PDF loader to handle file loading correctly on Vercel without direct filesystem access, possibly by fetching the PDF as an HTTP resource.
+- **Fix PDF URL env variable**: Reference https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables#loading-environment-variables-with-nextenv to correclt yload PDF env variable
 - **Write setup instruction**
