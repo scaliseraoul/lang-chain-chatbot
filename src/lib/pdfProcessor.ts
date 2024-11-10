@@ -7,13 +7,12 @@ export async function processStaticPDF() {
 
   let baseUrl = process.env.VERCEL_URL || "http://localhost:3000";
   baseUrl = baseUrl.startsWith("http") ? baseUrl : `https://${baseUrl}`;
-
-  const pdfUrl = `${baseUrl}/ugly_bank_file.pdf`;
-  const response = await fetch(pdfUrl);
   
-  if (!response.ok) {
-    throw new Error("Failed to fetch PDF file");
-  }
+  const pdfUrl = `${baseUrl}/ugly_bank_file.pdf`;
+  
+  console.log(pdfUrl)
+
+  const response = await fetch(pdfUrl);
 
   const pdfArrayBuffer = await response.arrayBuffer();
   const pdfBlob = new Blob([pdfArrayBuffer], { type: "application/pdf" });
