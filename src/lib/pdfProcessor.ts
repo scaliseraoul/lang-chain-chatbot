@@ -1,13 +1,20 @@
-import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { OpenAIEmbeddings } from "@langchain/openai";
-import path from "path";
+import { WebPDFLoader } from "@langchain/community/document_loaders/web/pdf";
 
 export async function processStaticPDF() {
 
-  const pdfPath = path.join(process.cwd(), "public", "ugly_bank_file.pdf");
-  const loader = new PDFLoader(pdfPath);
+  const pdfUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/ugly_bank_file.pdf`;
+  const response = await fetch(pdfUrl);
+  
+  if (!response.ok) {
+    throw new Error("Failed to fetch PDF file");
+  }
+
+  const pdfArrayBuffer = await response.arrayBuffer();
+  const pdfBlob = new Blob([pdfArrayBuffer], { type: "application/pdf" });
+  const loader = new WebPDFLoader(pdfBlob);
   const docs = await loader.load();
 
   const textSplitter = new RecursiveCharacterTextSplitter({
