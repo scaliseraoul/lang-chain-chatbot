@@ -14,6 +14,4 @@ PDF downloaded from https://www.credem.it/content/dam/credem/documenti/Trasparen
 
 ## TODO
 
-- **Optimize Chain Creation**: Move the chain creation logic to a separate module, allowing initialization once and avoiding re-creation with every message.
-- **Fix PDF URL env variable**: Reference https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables#loading-environment-variables-with-nextenv to correclt yload PDF env variable
 - **Write setup instruction**

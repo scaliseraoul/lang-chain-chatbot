@@ -19,7 +19,19 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center px-4">
       <h1 className="text-2xl font-semibold text-gray-800 mb-6 max-w-xl">
-        Fai una domanda riguardo ai Servizi accessori al Conto Credem Facile</h1>
+
+      Fai una domanda riguardo ai{" "}
+        <a
+          href="https://www.credem.it/content/dam/credem/documenti/Trasparenza/-conti-correnti---fascicoli-dei-servizi-accessori-al-conto/00001_010_FA_P_C_CFA21_P10831.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline inline-flex items-center"
+        >
+          Servizi accessori al Conto Credem Facile
+          <span className="ml-2">📄</span>
+        </a>
+        
+      </h1>
         <div className="flex items-center gap-4 mb-4 w-full max-w-lg">
         <input
           type="text"
