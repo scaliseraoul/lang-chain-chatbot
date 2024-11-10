@@ -5,7 +5,10 @@ import { WebPDFLoader } from "@langchain/community/document_loaders/web/pdf";
 
 export async function processStaticPDF() {
 
-  const pdfUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/ugly_bank_file.pdf`;
+  let baseUrl = process.env.VERCEL_URL || "http://localhost:3000";
+  baseUrl = baseUrl.startsWith("http") ? baseUrl : `https://${baseUrl}`;
+
+  const pdfUrl = `${baseUrl}/ugly_bank_file.pdf`;
   const response = await fetch(pdfUrl);
   
   if (!response.ok) {
